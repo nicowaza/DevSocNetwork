@@ -240,7 +240,7 @@ const postsRouter = __WEBPACK_IMPORTED_MODULE_0_express___default.a.Router();
 /* harmony export (immutable) */ __webpack_exports__["a"] = postsRouter;
 
 
-postsRouter.get('/test', (req, res) => console.log({ message: "posts works" }));
+postsRouter.route('/test').get(__WEBPACK_IMPORTED_MODULE_1__posts_ctrl__["a" /* default */].test);
 
 /***/ }),
 /* 12 */
@@ -250,7 +250,11 @@ postsRouter.get('/test', (req, res) => console.log({ message: "posts works" }));
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__posts_model__ = __webpack_require__(13);
 
 
-/* unused harmony default export */ var _unused_webpack_default_export = ({});
+/* harmony default export */ __webpack_exports__["a"] = ({
+  test(req, res) {
+    console.log('test');
+  }
+});
 
 /***/ }),
 /* 13 */
