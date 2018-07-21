@@ -203,10 +203,10 @@ const restRouter = __WEBPACK_IMPORTED_MODULE_0_express___default.a.Router();
 /* harmony export (immutable) */ __webpack_exports__["a"] = restRouter;
 
 
-restRouter.use('./posts', __WEBPACK_IMPORTED_MODULE_1__ressources_posts___["a" /* postsRouter */]);
+restRouter.use('/posts', __WEBPACK_IMPORTED_MODULE_1__ressources_posts___["a" /* postsRouter */]);
 
-restRouter.use('./users', __WEBPACK_IMPORTED_MODULE_2__ressources_users___["a" /* userRouter */]);
-restRouter.use('./profiles', __WEBPACK_IMPORTED_MODULE_3__ressources_profiles___["a" /* profileRouter */]);
+restRouter.use('/users', __WEBPACK_IMPORTED_MODULE_2__ressources_users___["a" /* userRouter */]);
+restRouter.use('/profiles', __WEBPACK_IMPORTED_MODULE_3__ressources_profiles___["a" /* profileRouter */]);
 
 restRouter.get('/', (req, res) => {
   res.send("hello");
