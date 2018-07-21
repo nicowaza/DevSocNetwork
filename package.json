@@ -1,0 +1,31 @@
+{
+  "name": "dev-soc-network-app",
+  "version": "1.0.0",
+  "description": "social network for dev",
+  "main": "index.js",
+  "scripts": {
+    "dev": "backpack dev"
+  },
+  "keywords": [
+    "MERN",
+    "stack"
+  ],
+  "author": "nicowaza",
+  "license": "ISC",
+  "dependencies": {
+    "backpack-core": "^0.7.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.3.0",
+    "mongoose": "^5.2.4",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "validator": "^10.4.0"
+  },
+  "devDependencies": {
+    "babel-preset-stage-3": "^6.24.1",
+    "dotenv": "^6.0.0",
+    "volleyball": "^1.5.1"
+  }
+}
