@@ -4,6 +4,9 @@ import 'dotenv/config'
 import bodyParser from 'body-parser'
 import volleyball from 'volleyball'
 import passport from 'passport'
+import {
+  configJWTStrategy
+} from './api/middlewares/passport-jwt'
 import mongoose from 'mongoose'
 import {
   connect
@@ -20,6 +23,14 @@ app.use(express.urlencoded({
 }))
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
+
+//passport middleware
+app.use(passport.initialize())
+
+//passport config
+configJWTStrategy()
+
+
 app.use('/api', restRouter)
 
 app.get("/", (req, res) => res.send('hi'));
