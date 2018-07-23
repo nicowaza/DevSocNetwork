@@ -1,7 +1,7 @@
 import express from 'express';
 const app = express();
 import 'dotenv/config'
-import bodyparser from 'body-parser'
+import bodyParser from 'body-parser'
 import volleyball from 'volleyball'
 import passport from 'passport'
 import mongoose from 'mongoose'
@@ -18,7 +18,8 @@ app.use(express.json())
 app.use(express.urlencoded({
   extended: true
 }))
-
+app.use(bodyParser.urlencoded({extended:false}))
+app.use(bodyParser.json())
 app.use('/api', restRouter)
 
 app.get("/", (req, res) => res.send('hi'));
