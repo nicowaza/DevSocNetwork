@@ -323,7 +323,11 @@ userRouter.get('/test', (req, res) => res.json({ message: "users works" }));
 const { Schema } = __WEBPACK_IMPORTED_MODULE_0_mongoose___default.a;
 
 const userSchema = new Schema({
-  name: {
+  firstName: {
+    type: String,
+    required: true
+  },
+  lastName: {
     type: String,
     required: true
   },
@@ -332,8 +336,7 @@ const userSchema = new Schema({
     required: true
   },
   avatar: {
-    type: String,
-    required: true
+    type: String
   },
   date: {
     type: Date,
