@@ -240,6 +240,9 @@ const postsRouter = __WEBPACK_IMPORTED_MODULE_0_express___default.a.Router();
 /* harmony export (immutable) */ __webpack_exports__["a"] = postsRouter;
 
 
+//route       : GET api/posts/test
+//description : Test post route
+//access      : public
 postsRouter.route('/test').get(__WEBPACK_IMPORTED_MODULE_1__posts_ctrl__["a" /* default */].test);
 
 /***/ }),
@@ -295,6 +298,9 @@ const userRouter = __WEBPACK_IMPORTED_MODULE_0_express___default.a.Router();
 /* harmony export (immutable) */ __webpack_exports__["a"] = userRouter;
 
 
+//route       : GET api/users/test
+//description : Test users route
+//access      : pubic
 userRouter.get('/test', (req, res) => res.json({ message: "users works" }));
 
 /***/ }),
@@ -344,6 +350,9 @@ const profileRouter = __WEBPACK_IMPORTED_MODULE_0_express___default.a.Router();
 /* harmony export (immutable) */ __webpack_exports__["a"] = profileRouter;
 
 
+//route       : GET api/profiles/test
+//description : Test profile route
+//access      : public
 profileRouter.get('/test', (req, res) => res.json({ message: "profile works" }));
 
 /***/ }),
