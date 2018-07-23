@@ -325,7 +325,7 @@ const { Schema } = __WEBPACK_IMPORTED_MODULE_0_mongoose___default.a;
 const userSchema = new Schema({
   name: {
     type: String,
-    required: ture
+    required: true
   },
   password: {
     type: String,
