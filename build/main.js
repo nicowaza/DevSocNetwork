@@ -322,7 +322,24 @@ userRouter.get('/test', (req, res) => res.json({ message: "users works" }));
 
 const { Schema } = __WEBPACK_IMPORTED_MODULE_0_mongoose___default.a;
 
-const userSchema = new Schema({});
+const userSchema = new Schema({
+  name: {
+    type: String,
+    required: ture
+  },
+  password: {
+    type: String,
+    required: true
+  },
+  avatar: {
+    type: String,
+    required: true
+  },
+  date: {
+    type: Date,
+    default: Date.now
+  }
+});
 
 /* unused harmony default export */ var _unused_webpack_default_export = (__WEBPACK_IMPORTED_MODULE_0_mongoose___default.a.model('User', userSchema));
 
