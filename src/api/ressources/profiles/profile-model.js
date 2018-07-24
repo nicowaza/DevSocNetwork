@@ -1,8 +1,8 @@
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
 const { Schema } = mongoose
 
 // Create Schema
-const ProfileSchema = new Schema({
+const profileSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
     ref: 'users'
@@ -32,7 +32,7 @@ const ProfileSchema = new Schema({
   bio: {
     type: String
   },
-  githubusername: {
+  githubUsername: {
     type: String
   },
   experience: [
@@ -74,7 +74,7 @@ const ProfileSchema = new Schema({
         type: String,
         required: true
       },
-      fieldofstudy: {
+      fieldOfStudy: {
         type: String,
         required: true
       },
