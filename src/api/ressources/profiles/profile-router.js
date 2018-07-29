@@ -7,6 +7,16 @@ export const profileRouter = express.Router()
 
 const userLogged = [passport.authenticate('jwt', {session: false}), isUser]
 
+//route       : POST api/profiles/experience
+//description : Add experience to profile
+//access      : Private
+profileRouter.post('/addJob', userLogged, profileControler.addJob)
+
+//route       : POST api/profiles/experience
+//description : Add experience to profile
+//access      : Private
+profileRouter.post('/addEducation', userLogged, profileControler.addEduc)
+
 //route       : GET api/profiles/test
 //description : Test profile route
 //access      : public

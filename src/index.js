@@ -4,13 +4,9 @@ import 'dotenv/config'
 import bodyParser from 'body-parser'
 import volleyball from 'volleyball'
 import passport from 'passport'
-import {
-  configJWTStrategy
-} from './api/middlewares/passport-jwt'
+import { configJWTStrategy } from './api/middlewares/passport-jwt'
 import mongoose from 'mongoose'
-import {
-  connect
-} from './config/db'
+import { connect } from './config/db'
 import { restRouter } from './api'
 
 const port = process.env.PORT || 5000

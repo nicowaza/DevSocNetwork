@@ -62,7 +62,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 50);
+/******/ 	return __webpack_require__(__webpack_require__.s = 52);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -81,8 +81,8 @@ if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var store = __webpack_require__(37)('wks');
-var uid = __webpack_require__(38);
+var store = __webpack_require__(39)('wks');
+var uid = __webpack_require__(40);
 var Symbol = __webpack_require__(0).Symbol;
 var USE_SYMBOL = typeof Symbol == 'function';
 
@@ -106,7 +106,7 @@ if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isObject = __webpack_require__(9);
+var isObject = __webpack_require__(10);
 module.exports = function (it) {
   if (!isObject(it)) throw TypeError(it + ' is not an object!');
   return it;
@@ -121,26 +121,6 @@ module.exports = require("express");
 
 /***/ }),
 /* 5 */
-/***/ (function(module, exports) {
-
-module.exports = require("mongoose");
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var dP = __webpack_require__(15);
-var createDesc = __webpack_require__(33);
-module.exports = __webpack_require__(10) ? function (object, key, value) {
-  return dP.f(object, key, createDesc(1, value));
-} : function (object, key, value) {
-  object[key] = value;
-  return object;
-};
-
-
-/***/ }),
-/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -150,7 +130,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _mongoose = __webpack_require__(5);
+var _mongoose = __webpack_require__(6);
 
 var _mongoose2 = _interopRequireDefault(_mongoose);
 
@@ -192,14 +172,40 @@ var userSchema = new Schema({
 exports.default = _mongoose2.default.model('User', userSchema);
 
 /***/ }),
+/* 6 */
+/***/ (function(module, exports) {
+
+module.exports = require("mongoose");
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var dP = __webpack_require__(16);
+var createDesc = __webpack_require__(35);
+module.exports = __webpack_require__(11) ? function (object, key, value) {
+  return dP.f(object, key, createDesc(1, value));
+} : function (object, key, value) {
+  object[key] = value;
+  return object;
+};
+
+
+/***/ }),
 /* 8 */
+/***/ (function(module, exports) {
+
+module.exports = require("passport");
+
+/***/ }),
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(0);
 var core = __webpack_require__(2);
-var ctx = __webpack_require__(13);
-var hide = __webpack_require__(6);
-var has = __webpack_require__(16);
+var ctx = __webpack_require__(14);
+var hide = __webpack_require__(7);
+var has = __webpack_require__(17);
 var PROTOTYPE = 'prototype';
 
 var $export = function (type, name, source) {
@@ -260,7 +266,7 @@ module.exports = $export;
 
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports) {
 
 module.exports = function (it) {
@@ -269,34 +275,34 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Thank's IE8 for his funny defineProperty
-module.exports = !__webpack_require__(21)(function () {
+module.exports = !__webpack_require__(24)(function () {
   return Object.defineProperty({}, 'a', { get: function () { return 7; } }).a != 7;
 });
-
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports) {
-
-module.exports = {};
 
 
 /***/ }),
 /* 12 */
 /***/ (function(module, exports) {
 
-module.exports = require("passport");
+module.exports = {};
+
 
 /***/ }),
 /* 13 */
+/***/ (function(module, exports) {
+
+module.exports = require("joi");
+
+/***/ }),
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // optional / simple context binding
-var aFunction = __webpack_require__(14);
+var aFunction = __webpack_require__(15);
 module.exports = function (fn, that, length) {
   aFunction(fn);
   if (that === undefined) return fn;
@@ -318,7 +324,7 @@ module.exports = function (fn, that, length) {
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports) {
 
 module.exports = function (it) {
@@ -328,15 +334,15 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var anObject = __webpack_require__(3);
-var IE8_DOM_DEFINE = __webpack_require__(72);
-var toPrimitive = __webpack_require__(73);
+var IE8_DOM_DEFINE = __webpack_require__(70);
+var toPrimitive = __webpack_require__(71);
 var dP = Object.defineProperty;
 
-exports.f = __webpack_require__(10) ? Object.defineProperty : function defineProperty(O, P, Attributes) {
+exports.f = __webpack_require__(11) ? Object.defineProperty : function defineProperty(O, P, Attributes) {
   anObject(O);
   P = toPrimitive(P, true);
   anObject(Attributes);
@@ -350,7 +356,7 @@ exports.f = __webpack_require__(10) ? Object.defineProperty : function definePro
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports) {
 
 var hasOwnProperty = {}.hasOwnProperty;
@@ -360,7 +366,7 @@ module.exports = function (it, key) {
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports) {
 
 var toString = {}.toString;
@@ -371,155 +377,14 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 18 */
-/***/ (function(module, exports) {
-
-// 7.1.4 ToInteger
-var ceil = Math.ceil;
-var floor = Math.floor;
-module.exports = function (it) {
-  return isNaN(it = +it) ? 0 : (it > 0 ? floor : ceil)(it);
-};
-
-
-/***/ }),
 /* 19 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-// 7.2.1 RequireObjectCoercible(argument)
-module.exports = function (it) {
-  if (it == undefined) throw TypeError("Can't call method on  " + it);
-  return it;
-};
+module.exports = __webpack_require__(63);
 
 
 /***/ }),
 /* 20 */
-/***/ (function(module, exports) {
-
-module.exports = true;
-
-
-/***/ }),
-/* 21 */
-/***/ (function(module, exports) {
-
-module.exports = function (exec) {
-  try {
-    return !!exec();
-  } catch (e) {
-    return true;
-  }
-};
-
-
-/***/ }),
-/* 22 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var isObject = __webpack_require__(9);
-var document = __webpack_require__(0).document;
-// typeof document.createElement is 'object' in old IE
-var is = isObject(document) && isObject(document.createElement);
-module.exports = function (it) {
-  return is ? document.createElement(it) : {};
-};
-
-
-/***/ }),
-/* 23 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// to indexed object, toObject with fallback for non-array-like ES3 strings
-var IObject = __webpack_require__(35);
-var defined = __webpack_require__(19);
-module.exports = function (it) {
-  return IObject(defined(it));
-};
-
-
-/***/ }),
-/* 24 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var shared = __webpack_require__(37)('keys');
-var uid = __webpack_require__(38);
-module.exports = function (key) {
-  return shared[key] || (shared[key] = uid(key));
-};
-
-
-/***/ }),
-/* 25 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var def = __webpack_require__(15).f;
-var has = __webpack_require__(16);
-var TAG = __webpack_require__(1)('toStringTag');
-
-module.exports = function (it, tag, stat) {
-  if (it && !has(it = stat ? it : it.prototype, TAG)) def(it, TAG, { configurable: true, value: tag });
-};
-
-
-/***/ }),
-/* 26 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-// 25.4.1.5 NewPromiseCapability(C)
-var aFunction = __webpack_require__(14);
-
-function PromiseCapability(C) {
-  var resolve, reject;
-  this.promise = new C(function ($$resolve, $$reject) {
-    if (resolve !== undefined || reject !== undefined) throw TypeError('Bad Promise constructor');
-    resolve = $$resolve;
-    reject = $$reject;
-  });
-  this.resolve = aFunction(resolve);
-  this.reject = aFunction(reject);
-}
-
-module.exports.f = function (C) {
-  return new PromiseCapability(C);
-};
-
-
-/***/ }),
-/* 27 */
-/***/ (function(module, exports) {
-
-module.exports = require("joi");
-
-/***/ }),
-/* 28 */
-/***/ (function(module, exports) {
-
-module.exports = require("dotenv/config");
-
-/***/ }),
-/* 29 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = {
-  mongoURI: 'mongodb://nicowaza:foxylady1480!@ds247191.mlab.com:47191/devsocnet',
-  secretOrKey: "%nicoSecret"
-};
-
-/***/ }),
-/* 30 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(65);
-
-
-/***/ }),
-/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -527,7 +392,7 @@ module.exports = __webpack_require__(65);
 
 exports.__esModule = true;
 
-var _promise = __webpack_require__(67);
+var _promise = __webpack_require__(65);
 
 var _promise2 = _interopRequireDefault(_promise);
 
@@ -563,19 +428,234 @@ exports.default = function (fn) {
 };
 
 /***/ }),
-/* 32 */
+/* 21 */
+/***/ (function(module, exports) {
+
+// 7.1.4 ToInteger
+var ceil = Math.ceil;
+var floor = Math.floor;
+module.exports = function (it) {
+  return isNaN(it = +it) ? 0 : (it > 0 ? floor : ceil)(it);
+};
+
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports) {
+
+// 7.2.1 RequireObjectCoercible(argument)
+module.exports = function (it) {
+  if (it == undefined) throw TypeError("Can't call method on  " + it);
+  return it;
+};
+
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports) {
+
+module.exports = true;
+
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports) {
+
+module.exports = function (exec) {
+  try {
+    return !!exec();
+  } catch (e) {
+    return true;
+  }
+};
+
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isObject = __webpack_require__(10);
+var document = __webpack_require__(0).document;
+// typeof document.createElement is 'object' in old IE
+var is = isObject(document) && isObject(document.createElement);
+module.exports = function (it) {
+  return is ? document.createElement(it) : {};
+};
+
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// to indexed object, toObject with fallback for non-array-like ES3 strings
+var IObject = __webpack_require__(37);
+var defined = __webpack_require__(22);
+module.exports = function (it) {
+  return IObject(defined(it));
+};
+
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var shared = __webpack_require__(39)('keys');
+var uid = __webpack_require__(40);
+module.exports = function (key) {
+  return shared[key] || (shared[key] = uid(key));
+};
+
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var def = __webpack_require__(16).f;
+var has = __webpack_require__(17);
+var TAG = __webpack_require__(1)('toStringTag');
+
+module.exports = function (it, tag, stat) {
+  if (it && !has(it = stat ? it : it.prototype, TAG)) def(it, TAG, { configurable: true, value: tag });
+};
+
+
+/***/ }),
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var LIBRARY = __webpack_require__(20);
-var $export = __webpack_require__(8);
-var redefine = __webpack_require__(74);
-var hide = __webpack_require__(6);
-var Iterators = __webpack_require__(11);
-var $iterCreate = __webpack_require__(75);
-var setToStringTag = __webpack_require__(25);
-var getPrototypeOf = __webpack_require__(81);
+// 25.4.1.5 NewPromiseCapability(C)
+var aFunction = __webpack_require__(15);
+
+function PromiseCapability(C) {
+  var resolve, reject;
+  this.promise = new C(function ($$resolve, $$reject) {
+    if (resolve !== undefined || reject !== undefined) throw TypeError('Bad Promise constructor');
+    resolve = $$resolve;
+    reject = $$reject;
+  });
+  this.resolve = aFunction(resolve);
+  this.reject = aFunction(reject);
+}
+
+module.exports.f = function (C) {
+  return new PromiseCapability(C);
+};
+
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports) {
+
+module.exports = require("bcryptjs");
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _userModel = __webpack_require__(5);
+
+var _userModel2 = _interopRequireDefault(_userModel);
+
+var _bcryptjs = __webpack_require__(30);
+
+var _bcryptjs2 = _interopRequireDefault(_bcryptjs);
+
+var _joi = __webpack_require__(13);
+
+var _joi2 = _interopRequireDefault(_joi);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  encryptedPassword: function encryptedPassword(text, err) {
+    var salt = _bcryptjs2.default.genSaltSync(10);
+    if (err) {
+      console.error(err);
+    }
+    return _bcryptjs2.default.hashSync(text, salt);
+  },
+  comparePassword: function comparePassword(text, encryptedPassword) {
+    return _bcryptjs2.default.compareSync(text, encryptedPassword);
+  },
+  validateRegister: function validateRegister(body) {
+    //Joi validation of the model
+    var schema = _joi2.default.object().keys({
+      firstName: _joi2.default.string().min(2).max(30).required(),
+      lastName: _joi2.default.string().min(2).max(30).required(),
+      userName: _joi2.default.string().alphanum().min(3).max(30).required(),
+      email: _joi2.default.string().email().required(),
+      password: _joi2.default.string().regex(/^[a-zA-Z0-9]{3,30}$/).required()
+      // avatar: Joi.string()
+    });
+
+    var _Joi$validate = _joi2.default.validate(body, schema),
+        value = _Joi$validate.value,
+        error = _Joi$validate.error;
+
+    if (error && error.details) {
+      return { error: error };
+    }
+    return { value: value };
+    console.log({ value: value });
+  },
+  validateLogin: function validateLogin(body) {
+    var schema = _joi2.default.object().keys({
+      email: _joi2.default.string().email().required(),
+      password: _joi2.default.string().required()
+    });
+
+    var _Joi$validate2 = _joi2.default.validate(body, schema),
+        value = _Joi$validate2.value,
+        error = _Joi$validate2.error;
+
+    if (error && error.details) {
+      return { error: error };
+    }
+    return { value: value };
+  }
+};
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports) {
+
+module.exports = require("dotenv/config");
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = {
+  mongoURI: 'mongodb://nicowaza:foxylady1480!@ds247191.mlab.com:47191/devsocnet',
+  secretOrKey: "%nicoSecret"
+};
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var LIBRARY = __webpack_require__(23);
+var $export = __webpack_require__(9);
+var redefine = __webpack_require__(72);
+var hide = __webpack_require__(7);
+var Iterators = __webpack_require__(12);
+var $iterCreate = __webpack_require__(73);
+var setToStringTag = __webpack_require__(28);
+var getPrototypeOf = __webpack_require__(79);
 var ITERATOR = __webpack_require__(1)('iterator');
 var BUGGY = !([].keys && 'next' in [].keys()); // Safari has buggy iterators w/o `next`
 var FF_ITERATOR = '@@iterator';
@@ -639,7 +719,7 @@ module.exports = function (Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCE
 
 
 /***/ }),
-/* 33 */
+/* 35 */
 /***/ (function(module, exports) {
 
 module.exports = function (bitmap, value) {
@@ -653,12 +733,12 @@ module.exports = function (bitmap, value) {
 
 
 /***/ }),
-/* 34 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 / 15.2.3.14 Object.keys(O)
-var $keys = __webpack_require__(78);
-var enumBugKeys = __webpack_require__(39);
+var $keys = __webpack_require__(76);
+var enumBugKeys = __webpack_require__(41);
 
 module.exports = Object.keys || function keys(O) {
   return $keys(O, enumBugKeys);
@@ -666,11 +746,11 @@ module.exports = Object.keys || function keys(O) {
 
 
 /***/ }),
-/* 35 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // fallback for non-array-like ES3 and non-enumerable old V8 strings
-var cof = __webpack_require__(17);
+var cof = __webpack_require__(18);
 // eslint-disable-next-line no-prototype-builtins
 module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
   return cof(it) == 'String' ? it.split('') : Object(it);
@@ -678,11 +758,11 @@ module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
 
 
 /***/ }),
-/* 36 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.15 ToLength
-var toInteger = __webpack_require__(18);
+var toInteger = __webpack_require__(21);
 var min = Math.min;
 module.exports = function (it) {
   return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
@@ -690,7 +770,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 37 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var core = __webpack_require__(2);
@@ -702,13 +782,13 @@ var store = global[SHARED] || (global[SHARED] = {});
   return store[key] || (store[key] = value !== undefined ? value : {});
 })('versions', []).push({
   version: core.version,
-  mode: __webpack_require__(20) ? 'pure' : 'global',
+  mode: __webpack_require__(23) ? 'pure' : 'global',
   copyright: '© 2018 Denis Pushkarev (zloirock.ru)'
 });
 
 
 /***/ }),
-/* 38 */
+/* 40 */
 /***/ (function(module, exports) {
 
 var id = 0;
@@ -719,7 +799,7 @@ module.exports = function (key) {
 
 
 /***/ }),
-/* 39 */
+/* 41 */
 /***/ (function(module, exports) {
 
 // IE 8- don't enum bug keys
@@ -729,7 +809,7 @@ module.exports = (
 
 
 /***/ }),
-/* 40 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var document = __webpack_require__(0).document;
@@ -737,22 +817,22 @@ module.exports = document && document.documentElement;
 
 
 /***/ }),
-/* 41 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.13 ToObject(argument)
-var defined = __webpack_require__(19);
+var defined = __webpack_require__(22);
 module.exports = function (it) {
   return Object(defined(it));
 };
 
 
 /***/ }),
-/* 42 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // getting tag from 19.1.3.6 Object.prototype.toString()
-var cof = __webpack_require__(17);
+var cof = __webpack_require__(18);
 var TAG = __webpack_require__(1)('toStringTag');
 // ES3 wrong here
 var ARG = cof(function () { return arguments; }()) == 'Arguments';
@@ -777,12 +857,12 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 43 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.3.20 SpeciesConstructor(O, defaultConstructor)
 var anObject = __webpack_require__(3);
-var aFunction = __webpack_require__(14);
+var aFunction = __webpack_require__(15);
 var SPECIES = __webpack_require__(1)('species');
 module.exports = function (O, D) {
   var C = anObject(O).constructor;
@@ -792,13 +872,13 @@ module.exports = function (O, D) {
 
 
 /***/ }),
-/* 44 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var ctx = __webpack_require__(13);
-var invoke = __webpack_require__(92);
-var html = __webpack_require__(40);
-var cel = __webpack_require__(22);
+var ctx = __webpack_require__(14);
+var invoke = __webpack_require__(90);
+var html = __webpack_require__(42);
+var cel = __webpack_require__(25);
 var global = __webpack_require__(0);
 var process = global.process;
 var setTask = global.setImmediate;
@@ -838,7 +918,7 @@ if (!setTask || !clearTask) {
     delete queue[id];
   };
   // Node.js 0.8-
-  if (__webpack_require__(17)(process) == 'process') {
+  if (__webpack_require__(18)(process) == 'process') {
     defer = function (id) {
       process.nextTick(ctx(run, id, 1));
     };
@@ -882,7 +962,7 @@ module.exports = {
 
 
 /***/ }),
-/* 45 */
+/* 47 */
 /***/ (function(module, exports) {
 
 module.exports = function (exec) {
@@ -895,12 +975,12 @@ module.exports = function (exec) {
 
 
 /***/ }),
-/* 46 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var anObject = __webpack_require__(3);
-var isObject = __webpack_require__(9);
-var newPromiseCapability = __webpack_require__(26);
+var isObject = __webpack_require__(10);
+var newPromiseCapability = __webpack_require__(29);
 
 module.exports = function (C, x) {
   anObject(C);
@@ -913,86 +993,6 @@ module.exports = function (C, x) {
 
 
 /***/ }),
-/* 47 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _userModel = __webpack_require__(7);
-
-var _userModel2 = _interopRequireDefault(_userModel);
-
-var _bcryptjs = __webpack_require__(48);
-
-var _bcryptjs2 = _interopRequireDefault(_bcryptjs);
-
-var _joi = __webpack_require__(27);
-
-var _joi2 = _interopRequireDefault(_joi);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-  encryptedPassword: function encryptedPassword(text, err) {
-    var salt = _bcryptjs2.default.genSaltSync(10);
-    if (err) {
-      console.error(err);
-    }
-    return _bcryptjs2.default.hashSync(text, salt);
-  },
-  comparePassword: function comparePassword(text, encryptedPassword) {
-    return _bcryptjs2.default.compareSync(text, encryptedPassword);
-  },
-  validateRegister: function validateRegister(body) {
-    //Joi validation of the model
-    var schema = _joi2.default.object().keys({
-      firstName: _joi2.default.string().min(2).max(30).required(),
-      lastName: _joi2.default.string().min(2).max(30).required(),
-      userName: _joi2.default.string().alphanum().min(3).max(30).required(),
-      email: _joi2.default.string().email().required(),
-      password: _joi2.default.string().regex(/^[a-zA-Z0-9]{3,30}$/).required()
-      // avatar: Joi.string()
-    });
-
-    var _Joi$validate = _joi2.default.validate(body, schema),
-        value = _Joi$validate.value,
-        error = _Joi$validate.error;
-
-    if (error && error.details) {
-      return { error: error };
-    }
-    return { value: value };
-    console.log({ value: value });
-  },
-  validateLogin: function validateLogin(body) {
-    var schema = _joi2.default.object().keys({
-      email: _joi2.default.string().email().required(),
-      password: _joi2.default.string().required()
-    });
-
-    var _Joi$validate2 = _joi2.default.validate(body, schema),
-        value = _Joi$validate2.value,
-        error = _Joi$validate2.error;
-
-    if (error && error.details) {
-      return { error: error };
-    }
-    return { value: value };
-  }
-};
-
-/***/ }),
-/* 48 */
-/***/ (function(module, exports) {
-
-module.exports = require("bcryptjs");
-
-/***/ }),
 /* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1003,7 +1003,96 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _mongoose = __webpack_require__(5);
+var _mongoose = __webpack_require__(6);
+
+var _mongoose2 = _interopRequireDefault(_mongoose);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Schema = _mongoose2.default.Schema;
+
+
+var postsSchema = new Schema({
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'users'
+  },
+  text: {
+    type: String,
+    required: true
+  },
+  firstName: {
+    type: String
+  },
+  lastName: {
+    type: String
+  },
+  avatar: {
+    type: String
+  },
+  likes: [{
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: 'users'
+    }
+  }],
+  comments: [{
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: 'users'
+    },
+    text: {
+      type: String,
+      required: true
+    },
+    name: {
+      type: String
+    },
+    avatar: {
+      type: String
+    },
+    date: {
+      type: Date,
+      default: Date.now
+    }
+  }],
+  date: {
+    type: Date,
+    default: Date.now
+  }
+});
+
+exports.default = _mongoose2.default.model('Posts', postsSchema);
+
+/***/ }),
+/* 50 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var isUser = exports.isUser = function isUser(req, res, next) {
+  if (!req.user) {
+    return res.json({ err: 'unauthorized, not a user' });
+  }
+  next();
+};
+
+/***/ }),
+/* 51 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _mongoose = __webpack_require__(6);
 
 var _mongoose2 = _interopRequireDefault(_mongoose);
 
@@ -1127,14 +1216,14 @@ var profileSchema = new Schema({
 exports.default = _mongoose2.default.model('Profile', profileSchema);
 
 /***/ }),
-/* 50 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(51);
+module.exports = __webpack_require__(53);
 
 
 /***/ }),
-/* 51 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1144,29 +1233,29 @@ var _express = __webpack_require__(4);
 
 var _express2 = _interopRequireDefault(_express);
 
-__webpack_require__(28);
+__webpack_require__(32);
 
-var _bodyParser = __webpack_require__(52);
+var _bodyParser = __webpack_require__(54);
 
 var _bodyParser2 = _interopRequireDefault(_bodyParser);
 
-var _volleyball = __webpack_require__(53);
+var _volleyball = __webpack_require__(55);
 
 var _volleyball2 = _interopRequireDefault(_volleyball);
 
-var _passport = __webpack_require__(12);
+var _passport = __webpack_require__(8);
 
 var _passport2 = _interopRequireDefault(_passport);
 
-var _passportJwt = __webpack_require__(54);
+var _passportJwt = __webpack_require__(56);
 
-var _mongoose = __webpack_require__(5);
+var _mongoose = __webpack_require__(6);
 
 var _mongoose2 = _interopRequireDefault(_mongoose);
 
-var _db = __webpack_require__(56);
+var _db = __webpack_require__(58);
 
-var _api = __webpack_require__(57);
+var _api = __webpack_require__(59);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1201,19 +1290,19 @@ app.listen(port, function () {
 });
 
 /***/ }),
-/* 52 */
+/* 54 */
 /***/ (function(module, exports) {
 
 module.exports = require("body-parser");
 
 /***/ }),
-/* 53 */
+/* 55 */
 /***/ (function(module, exports) {
 
 module.exports = require("volleyball");
 
 /***/ }),
-/* 54 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1224,19 +1313,19 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.configJWTStrategy = undefined;
 
-var _passport = __webpack_require__(12);
+var _passport = __webpack_require__(8);
 
 var _passport2 = _interopRequireDefault(_passport);
 
-var _passportJwt = __webpack_require__(55);
+var _passportJwt = __webpack_require__(57);
 
 var _passportJwt2 = _interopRequireDefault(_passportJwt);
 
-var _keys = __webpack_require__(29);
+var _keys = __webpack_require__(33);
 
 var _keys2 = _interopRequireDefault(_keys);
 
-var _userModel = __webpack_require__(7);
+var _userModel = __webpack_require__(5);
 
 var _userModel2 = _interopRequireDefault(_userModel);
 
@@ -1263,13 +1352,13 @@ var configJWTStrategy = exports.configJWTStrategy = function configJWTStrategy()
 };
 
 /***/ }),
-/* 55 */
+/* 57 */
 /***/ (function(module, exports) {
 
 module.exports = require("passport-jwt");
 
 /***/ }),
-/* 56 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1280,11 +1369,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.connect = undefined;
 
-var _mongoose = __webpack_require__(5);
+var _mongoose = __webpack_require__(6);
 
 var _mongoose2 = _interopRequireDefault(_mongoose);
 
-__webpack_require__(28);
+__webpack_require__(32);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1308,7 +1397,7 @@ db.once('open', function () {
 });
 
 /***/ }),
-/* 57 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1323,11 +1412,11 @@ var _express = __webpack_require__(4);
 
 var _express2 = _interopRequireDefault(_express);
 
-var _posts = __webpack_require__(58);
+var _posts = __webpack_require__(60);
 
-var _users = __webpack_require__(62);
+var _users = __webpack_require__(99);
 
-var _profiles = __webpack_require__(103);
+var _profiles = __webpack_require__(105);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1343,7 +1432,7 @@ restRouter.get('/', function (req, res) {
 });
 
 /***/ }),
-/* 58 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1354,7 +1443,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.postsRouter = undefined;
 
-var _postsRouter = __webpack_require__(59);
+var _postsRouter = __webpack_require__(61);
 
 Object.defineProperty(exports, 'postsRouter', {
   enumerable: true,
@@ -1370,7 +1459,7 @@ var _express2 = _interopRequireDefault(_express);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 59 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1385,65 +1474,31 @@ var _express = __webpack_require__(4);
 
 var _express2 = _interopRequireDefault(_express);
 
-var _postsCtrl = __webpack_require__(60);
+var _postsCtrl = __webpack_require__(62);
 
 var _postsCtrl2 = _interopRequireDefault(_postsCtrl);
+
+var _passport = __webpack_require__(8);
+
+var _passport2 = _interopRequireDefault(_passport);
+
+var _isUser = __webpack_require__(50);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var postsRouter = exports.postsRouter = _express2.default.Router();
 
-//route       : GET api/posts/test
-//description : Test post route
-//access      : public
-postsRouter.route('/test').get(_postsCtrl2.default.test);
+var userLogged = [_passport2.default.authenticate('jwt', { session: false }), _isUser.isUser];
 
-/***/ }),
-/* 60 */
-/***/ (function(module, exports, __webpack_require__) {
+//route       : POST api/posts
+//description : Create posts
+//access      : Public
+postsRouter.route('/').post(userLogged, _postsCtrl2.default.addPosts)
 
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _postsModel = __webpack_require__(61);
-
-var _postsModel2 = _interopRequireDefault(_postsModel);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-  test: function test(req, res) {
-    console.log('test');
-  }
-};
-
-/***/ }),
-/* 61 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _mongoose = __webpack_require__(5);
-
-var _mongoose2 = _interopRequireDefault(_mongoose);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Schema = _mongoose2.default.Schema;
-
-
-var postsSchema = new Schema({});
-
-exports.default = _mongoose2.default.model('Posts', postsSchema);
+//route       : GET api/posts
+//description : Get posts
+//access      : Public
+.get(_postsCtrl2.default.findAllPosts);
 
 /***/ }),
 /* 62 */
@@ -1456,123 +1511,53 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _userRouter = __webpack_require__(63);
-
-Object.defineProperty(exports, 'userRouter', {
-  enumerable: true,
-  get: function get() {
-    return _userRouter.userRouter;
-  }
-});
-
-/***/ }),
-/* 63 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.userRouter = undefined;
-
-var _express = __webpack_require__(4);
-
-var _express2 = _interopRequireDefault(_express);
-
-var _userCtrl = __webpack_require__(64);
-
-var _userCtrl2 = _interopRequireDefault(_userCtrl);
-
-var _passport = __webpack_require__(12);
-
-var _passport2 = _interopRequireDefault(_passport);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var userRouter = exports.userRouter = _express2.default.Router();
-
-//route       : GET api/users/test
-//description : Test users route
-//access      : pubic
-userRouter.get('/test', function (req, res) {
-  return res.json({ message: "users works" });
-});
-
-//route       : POST api/users/register
-//description : Register user
-//access      : Public
-userRouter.post('/register', _userCtrl2.default.register);
-userRouter.get('/register', function (req, res) {
-  return res.json({ message: "register works" });
-});
-
-//route       : POST api/users/login
-//description : Login user
-//access      : Public
-userRouter.post('/login', _userCtrl2.default.login);
-
-//route       : GET api/users/current
-//description : Return current user
-//access      : Private
-
-userRouter.get('/current', _passport2.default.authenticate('jwt', { session: false }), _userCtrl2.default.authenticate);
-
-/***/ }),
-/* 64 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _regenerator = __webpack_require__(30);
+var _regenerator = __webpack_require__(19);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _asyncToGenerator2 = __webpack_require__(31);
+var _asyncToGenerator2 = __webpack_require__(20);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
-var _userService = __webpack_require__(47);
+var _postsModel = __webpack_require__(49);
+
+var _postsModel2 = _interopRequireDefault(_postsModel);
+
+var _joi = __webpack_require__(13);
+
+var _joi2 = _interopRequireDefault(_joi);
+
+var _postsService = __webpack_require__(98);
+
+var _postsService2 = _interopRequireDefault(_postsService);
+
+var _userService = __webpack_require__(31);
 
 var _userService2 = _interopRequireDefault(_userService);
 
-var _userModel = __webpack_require__(7);
+var _userModel = __webpack_require__(5);
 
 var _userModel2 = _interopRequireDefault(_userModel);
 
-var _bcryptjs = __webpack_require__(48);
+var _mongoose = __webpack_require__(6);
 
-var _bcryptjs2 = _interopRequireDefault(_bcryptjs);
-
-var _gravatar = __webpack_require__(100);
-
-var _gravatar2 = _interopRequireDefault(_gravatar);
-
-var _jwt = __webpack_require__(101);
-
-var _jwt2 = _interopRequireDefault(_jwt);
+var _mongoose2 = _interopRequireDefault(_mongoose);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-  register: function () {
+  addPosts: function () {
     var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(req, res) {
-      var _userService$validate, _value, error, encryptedPass, avatar, user;
+      var _postsService$validat, value, error, posts;
 
       return _regenerator2.default.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
               _context.prev = 0;
-              _userService$validate = _userService2.default.validateRegister(req.body), _value = _userService$validate.value, error = _userService$validate.error;
+              _postsService$validat = _postsService2.default.validatePosts(req.body), value = _postsService$validat.value, error = _postsService$validat.error;
 
-              if (!error) {
+              if (!(error && error.details)) {
                 _context.next = 4;
                 break;
               }
@@ -1580,133 +1565,74 @@ exports.default = {
               return _context.abrupt('return', res.status(400).json(error));
 
             case 4:
-              encryptedPass = _userService2.default.encryptedPassword(_value.password);
-              //GRAVATAR
+              _context.next = 6;
+              return _postsModel2.default.create(value, { user: req.user._id });
 
-              avatar = _gravatar2.default.url(req.body.email, {
-                s: '200', //size
-                r: 'r', //rating
-                d: 'mm' //default
-              });
-              _context.next = 8;
-              return _userModel2.default.create({
-                email: _value.email,
-                userName: _value.userName,
-                firstName: _value.firstName,
-                lastName: _value.lastName,
-                password: encryptedPass,
-                avatar: avatar,
-                date: _value.date
-              });
+            case 6:
+              posts = _context.sent;
+              return _context.abrupt('return', res.json(posts));
 
-            case 8:
-              user = _context.sent;
-              return _context.abrupt('return', res.json(user));
-
-            case 13:
-              _context.prev = 13;
+            case 10:
+              _context.prev = 10;
               _context.t0 = _context['catch'](0);
 
               console.error(_context.t0);
               return _context.abrupt('return', res.status(500).send(_context.t0));
 
-            case 17:
-              return _context.abrupt('return', res.json(value));
-
-            case 19:
+            case 14:
             case 'end':
               return _context.stop();
           }
         }
-      }, _callee, this, [[0, 13]]);
+      }, _callee, this, [[0, 10]]);
     }));
 
-    function register(_x, _x2) {
+    function addPosts(_x, _x2) {
       return _ref.apply(this, arguments);
     }
 
-    return register;
+    return addPosts;
   }(),
-  login: function () {
+  findAllPosts: function () {
     var _ref2 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee2(req, res) {
-      var _userService$validate2, _value2, error, user, authenticated, token;
-
+      var posts;
       return _regenerator2.default.wrap(function _callee2$(_context2) {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
               _context2.prev = 0;
-              _userService$validate2 = _userService2.default.validateLogin(req.body), _value2 = _userService$validate2.value, error = _userService$validate2.error;
+              _context2.next = 3;
+              return _postsModel2.default.find({});
 
-              if (!error) {
-                _context2.next = 4;
-                break;
-              }
+            case 3:
+              posts = _context2.sent;
+              return _context2.abrupt('return', res.json(posts));
 
-              return _context2.abrupt('return', res.status(400).json(error));
-
-            case 4:
-              _context2.next = 6;
-              return _userModel2.default.findOne({ email: _value2.email });
-
-            case 6:
-              user = _context2.sent;
-
-              if (user) {
-                _context2.next = 9;
-                break;
-              }
-
-              return _context2.abrupt('return', res.status(404).json({ err: "User not found" }));
-
-            case 9:
-              authenticated = _userService2.default.comparePassword(_value2.password, user.password);
-
-              if (authenticated) {
-                _context2.next = 12;
-                break;
-              }
-
-              return _context2.abrupt('return', res.status(401).json({ err: "Invalid password" }));
-
-            case 12:
-              token = _jwt2.default.issue({
-                id: user._id
-              }, '3h');
-              return _context2.abrupt('return', res.json(token));
-
-            case 16:
-              _context2.prev = 16;
+            case 7:
+              _context2.prev = 7;
               _context2.t0 = _context2['catch'](0);
 
-              console.error(_context2.t0);
-              return _context2.abrupt('return', res.status(500).send(_context2.t0));
+              console.log(_context2.t0);
+              return _context2.abrupt('return', res.status(404).send(_context2.t0));
 
-            case 20:
+            case 11:
             case 'end':
               return _context2.stop();
           }
         }
-      }, _callee2, this, [[0, 16]]);
+      }, _callee2, this, [[0, 7]]);
     }));
 
-    function login(_x3, _x4) {
+    function findAllPosts(_x3, _x4) {
       return _ref2.apply(this, arguments);
     }
 
-    return login;
-  }(),
-  authenticate: function authenticate(req, res) {
-    return res.json({
-      id: req.user.id,
-      userName: req.user.userName,
-      email: req.user.email
-    });
-  }
+    return findAllPosts;
+  }()
 };
 
 /***/ }),
-/* 65 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -1731,7 +1657,7 @@ var oldRuntime = hadRuntime && g.regeneratorRuntime;
 // Force reevalutation of runtime.js.
 g.regeneratorRuntime = undefined;
 
-module.exports = __webpack_require__(66);
+module.exports = __webpack_require__(64);
 
 if (hadRuntime) {
   // Restore the original runtime.
@@ -1747,7 +1673,7 @@ if (hadRuntime) {
 
 
 /***/ }),
-/* 66 */
+/* 64 */
 /***/ (function(module, exports) {
 
 /**
@@ -2480,40 +2406,40 @@ if (hadRuntime) {
 
 
 /***/ }),
-/* 67 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(68), __esModule: true };
+module.exports = { "default": __webpack_require__(66), __esModule: true };
 
 /***/ }),
-/* 68 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(69);
-__webpack_require__(70);
-__webpack_require__(82);
-__webpack_require__(86);
-__webpack_require__(98);
-__webpack_require__(99);
+__webpack_require__(67);
+__webpack_require__(68);
+__webpack_require__(80);
+__webpack_require__(84);
+__webpack_require__(96);
+__webpack_require__(97);
 module.exports = __webpack_require__(2).Promise;
 
 
 /***/ }),
-/* 69 */
+/* 67 */
 /***/ (function(module, exports) {
 
 
 
 /***/ }),
-/* 70 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var $at = __webpack_require__(71)(true);
+var $at = __webpack_require__(69)(true);
 
 // 21.1.3.27 String.prototype[@@iterator]()
-__webpack_require__(32)(String, 'String', function (iterated) {
+__webpack_require__(34)(String, 'String', function (iterated) {
   this._t = String(iterated); // target
   this._i = 0;                // next index
 // 21.1.5.2.1 %StringIteratorPrototype%.next()
@@ -2529,11 +2455,11 @@ __webpack_require__(32)(String, 'String', function (iterated) {
 
 
 /***/ }),
-/* 71 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var toInteger = __webpack_require__(18);
-var defined = __webpack_require__(19);
+var toInteger = __webpack_require__(21);
+var defined = __webpack_require__(22);
 // true  -> String#at
 // false -> String#codePointAt
 module.exports = function (TO_STRING) {
@@ -2552,20 +2478,20 @@ module.exports = function (TO_STRING) {
 
 
 /***/ }),
-/* 72 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = !__webpack_require__(10) && !__webpack_require__(21)(function () {
-  return Object.defineProperty(__webpack_require__(22)('div'), 'a', { get: function () { return 7; } }).a != 7;
+module.exports = !__webpack_require__(11) && !__webpack_require__(24)(function () {
+  return Object.defineProperty(__webpack_require__(25)('div'), 'a', { get: function () { return 7; } }).a != 7;
 });
 
 
 /***/ }),
-/* 73 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.1 ToPrimitive(input [, PreferredType])
-var isObject = __webpack_require__(9);
+var isObject = __webpack_require__(10);
 // instead of the ES6 spec version, we didn't implement @@toPrimitive case
 // and the second argument - flag - preferred type is a string
 module.exports = function (it, S) {
@@ -2579,25 +2505,25 @@ module.exports = function (it, S) {
 
 
 /***/ }),
-/* 74 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(6);
+module.exports = __webpack_require__(7);
 
 
 /***/ }),
-/* 75 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var create = __webpack_require__(76);
-var descriptor = __webpack_require__(33);
-var setToStringTag = __webpack_require__(25);
+var create = __webpack_require__(74);
+var descriptor = __webpack_require__(35);
+var setToStringTag = __webpack_require__(28);
 var IteratorPrototype = {};
 
 // 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
-__webpack_require__(6)(IteratorPrototype, __webpack_require__(1)('iterator'), function () { return this; });
+__webpack_require__(7)(IteratorPrototype, __webpack_require__(1)('iterator'), function () { return this; });
 
 module.exports = function (Constructor, NAME, next) {
   Constructor.prototype = create(IteratorPrototype, { next: descriptor(1, next) });
@@ -2606,27 +2532,27 @@ module.exports = function (Constructor, NAME, next) {
 
 
 /***/ }),
-/* 76 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
 var anObject = __webpack_require__(3);
-var dPs = __webpack_require__(77);
-var enumBugKeys = __webpack_require__(39);
-var IE_PROTO = __webpack_require__(24)('IE_PROTO');
+var dPs = __webpack_require__(75);
+var enumBugKeys = __webpack_require__(41);
+var IE_PROTO = __webpack_require__(27)('IE_PROTO');
 var Empty = function () { /* empty */ };
 var PROTOTYPE = 'prototype';
 
 // Create object with fake `null` prototype: use iframe Object with cleared prototype
 var createDict = function () {
   // Thrash, waste and sodomy: IE GC bug
-  var iframe = __webpack_require__(22)('iframe');
+  var iframe = __webpack_require__(25)('iframe');
   var i = enumBugKeys.length;
   var lt = '<';
   var gt = '>';
   var iframeDocument;
   iframe.style.display = 'none';
-  __webpack_require__(40).appendChild(iframe);
+  __webpack_require__(42).appendChild(iframe);
   iframe.src = 'javascript:'; // eslint-disable-line no-script-url
   // createDict = iframe.contentWindow.Object;
   // html.removeChild(iframe);
@@ -2653,14 +2579,14 @@ module.exports = Object.create || function create(O, Properties) {
 
 
 /***/ }),
-/* 77 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var dP = __webpack_require__(15);
+var dP = __webpack_require__(16);
 var anObject = __webpack_require__(3);
-var getKeys = __webpack_require__(34);
+var getKeys = __webpack_require__(36);
 
-module.exports = __webpack_require__(10) ? Object.defineProperties : function defineProperties(O, Properties) {
+module.exports = __webpack_require__(11) ? Object.defineProperties : function defineProperties(O, Properties) {
   anObject(O);
   var keys = getKeys(Properties);
   var length = keys.length;
@@ -2672,13 +2598,13 @@ module.exports = __webpack_require__(10) ? Object.defineProperties : function de
 
 
 /***/ }),
-/* 78 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var has = __webpack_require__(16);
-var toIObject = __webpack_require__(23);
-var arrayIndexOf = __webpack_require__(79)(false);
-var IE_PROTO = __webpack_require__(24)('IE_PROTO');
+var has = __webpack_require__(17);
+var toIObject = __webpack_require__(26);
+var arrayIndexOf = __webpack_require__(77)(false);
+var IE_PROTO = __webpack_require__(27)('IE_PROTO');
 
 module.exports = function (object, names) {
   var O = toIObject(object);
@@ -2695,14 +2621,14 @@ module.exports = function (object, names) {
 
 
 /***/ }),
-/* 79 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // false -> Array#indexOf
 // true  -> Array#includes
-var toIObject = __webpack_require__(23);
-var toLength = __webpack_require__(36);
-var toAbsoluteIndex = __webpack_require__(80);
+var toIObject = __webpack_require__(26);
+var toLength = __webpack_require__(38);
+var toAbsoluteIndex = __webpack_require__(78);
 module.exports = function (IS_INCLUDES) {
   return function ($this, el, fromIndex) {
     var O = toIObject($this);
@@ -2724,10 +2650,10 @@ module.exports = function (IS_INCLUDES) {
 
 
 /***/ }),
-/* 80 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var toInteger = __webpack_require__(18);
+var toInteger = __webpack_require__(21);
 var max = Math.max;
 var min = Math.min;
 module.exports = function (index, length) {
@@ -2737,13 +2663,13 @@ module.exports = function (index, length) {
 
 
 /***/ }),
-/* 81 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
-var has = __webpack_require__(16);
-var toObject = __webpack_require__(41);
-var IE_PROTO = __webpack_require__(24)('IE_PROTO');
+var has = __webpack_require__(17);
+var toObject = __webpack_require__(43);
+var IE_PROTO = __webpack_require__(27)('IE_PROTO');
 var ObjectProto = Object.prototype;
 
 module.exports = Object.getPrototypeOf || function (O) {
@@ -2756,13 +2682,13 @@ module.exports = Object.getPrototypeOf || function (O) {
 
 
 /***/ }),
-/* 82 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(83);
+__webpack_require__(81);
 var global = __webpack_require__(0);
-var hide = __webpack_require__(6);
-var Iterators = __webpack_require__(11);
+var hide = __webpack_require__(7);
+var Iterators = __webpack_require__(12);
 var TO_STRING_TAG = __webpack_require__(1)('toStringTag');
 
 var DOMIterables = ('CSSRuleList,CSSStyleDeclaration,CSSValueList,ClientRectList,DOMRectList,DOMStringList,' +
@@ -2781,21 +2707,21 @@ for (var i = 0; i < DOMIterables.length; i++) {
 
 
 /***/ }),
-/* 83 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var addToUnscopables = __webpack_require__(84);
-var step = __webpack_require__(85);
-var Iterators = __webpack_require__(11);
-var toIObject = __webpack_require__(23);
+var addToUnscopables = __webpack_require__(82);
+var step = __webpack_require__(83);
+var Iterators = __webpack_require__(12);
+var toIObject = __webpack_require__(26);
 
 // 22.1.3.4 Array.prototype.entries()
 // 22.1.3.13 Array.prototype.keys()
 // 22.1.3.29 Array.prototype.values()
 // 22.1.3.30 Array.prototype[@@iterator]()
-module.exports = __webpack_require__(32)(Array, 'Array', function (iterated, kind) {
+module.exports = __webpack_require__(34)(Array, 'Array', function (iterated, kind) {
   this._t = toIObject(iterated); // target
   this._i = 0;                   // next index
   this._k = kind;                // kind
@@ -2822,14 +2748,14 @@ addToUnscopables('entries');
 
 
 /***/ }),
-/* 84 */
+/* 82 */
 /***/ (function(module, exports) {
 
 module.exports = function () { /* empty */ };
 
 
 /***/ }),
-/* 85 */
+/* 83 */
 /***/ (function(module, exports) {
 
 module.exports = function (done, value) {
@@ -2838,27 +2764,27 @@ module.exports = function (done, value) {
 
 
 /***/ }),
-/* 86 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var LIBRARY = __webpack_require__(20);
+var LIBRARY = __webpack_require__(23);
 var global = __webpack_require__(0);
-var ctx = __webpack_require__(13);
-var classof = __webpack_require__(42);
-var $export = __webpack_require__(8);
-var isObject = __webpack_require__(9);
-var aFunction = __webpack_require__(14);
-var anInstance = __webpack_require__(87);
-var forOf = __webpack_require__(88);
-var speciesConstructor = __webpack_require__(43);
-var task = __webpack_require__(44).set;
-var microtask = __webpack_require__(93)();
-var newPromiseCapabilityModule = __webpack_require__(26);
-var perform = __webpack_require__(45);
-var userAgent = __webpack_require__(94);
-var promiseResolve = __webpack_require__(46);
+var ctx = __webpack_require__(14);
+var classof = __webpack_require__(44);
+var $export = __webpack_require__(9);
+var isObject = __webpack_require__(10);
+var aFunction = __webpack_require__(15);
+var anInstance = __webpack_require__(85);
+var forOf = __webpack_require__(86);
+var speciesConstructor = __webpack_require__(45);
+var task = __webpack_require__(46).set;
+var microtask = __webpack_require__(91)();
+var newPromiseCapabilityModule = __webpack_require__(29);
+var perform = __webpack_require__(47);
+var userAgent = __webpack_require__(92);
+var promiseResolve = __webpack_require__(48);
 var PROMISE = 'Promise';
 var TypeError = global.TypeError;
 var process = global.process;
@@ -3033,7 +2959,7 @@ if (!USE_NATIVE) {
     this._h = 0;              // <- rejection state, 0 - default, 1 - handled, 2 - unhandled
     this._n = false;          // <- notify
   };
-  Internal.prototype = __webpack_require__(95)($Promise.prototype, {
+  Internal.prototype = __webpack_require__(93)($Promise.prototype, {
     // 25.4.5.3 Promise.prototype.then(onFulfilled, onRejected)
     then: function then(onFulfilled, onRejected) {
       var reaction = newPromiseCapability(speciesConstructor(this, $Promise));
@@ -3064,8 +2990,8 @@ if (!USE_NATIVE) {
 }
 
 $export($export.G + $export.W + $export.F * !USE_NATIVE, { Promise: $Promise });
-__webpack_require__(25)($Promise, PROMISE);
-__webpack_require__(96)(PROMISE);
+__webpack_require__(28)($Promise, PROMISE);
+__webpack_require__(94)(PROMISE);
 Wrapper = __webpack_require__(2)[PROMISE];
 
 // statics
@@ -3084,7 +3010,7 @@ $export($export.S + $export.F * (LIBRARY || !USE_NATIVE), PROMISE, {
     return promiseResolve(LIBRARY && this === Wrapper ? $Promise : this, x);
   }
 });
-$export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(97)(function (iter) {
+$export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(95)(function (iter) {
   $Promise.all(iter)['catch'](empty);
 })), PROMISE, {
   // 25.4.4.1 Promise.all(iterable)
@@ -3131,7 +3057,7 @@ $export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(97)(function
 
 
 /***/ }),
-/* 87 */
+/* 85 */
 /***/ (function(module, exports) {
 
 module.exports = function (it, Constructor, name, forbiddenField) {
@@ -3142,15 +3068,15 @@ module.exports = function (it, Constructor, name, forbiddenField) {
 
 
 /***/ }),
-/* 88 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var ctx = __webpack_require__(13);
-var call = __webpack_require__(89);
-var isArrayIter = __webpack_require__(90);
+var ctx = __webpack_require__(14);
+var call = __webpack_require__(87);
+var isArrayIter = __webpack_require__(88);
 var anObject = __webpack_require__(3);
-var toLength = __webpack_require__(36);
-var getIterFn = __webpack_require__(91);
+var toLength = __webpack_require__(38);
+var getIterFn = __webpack_require__(89);
 var BREAK = {};
 var RETURN = {};
 var exports = module.exports = function (iterable, entries, fn, that, ITERATOR) {
@@ -3173,7 +3099,7 @@ exports.RETURN = RETURN;
 
 
 /***/ }),
-/* 89 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // call something on iterator step with safe closing on error
@@ -3191,11 +3117,11 @@ module.exports = function (iterator, fn, value, entries) {
 
 
 /***/ }),
-/* 90 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // check on default Array iterator
-var Iterators = __webpack_require__(11);
+var Iterators = __webpack_require__(12);
 var ITERATOR = __webpack_require__(1)('iterator');
 var ArrayProto = Array.prototype;
 
@@ -3205,12 +3131,12 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 91 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var classof = __webpack_require__(42);
+var classof = __webpack_require__(44);
 var ITERATOR = __webpack_require__(1)('iterator');
-var Iterators = __webpack_require__(11);
+var Iterators = __webpack_require__(12);
 module.exports = __webpack_require__(2).getIteratorMethod = function (it) {
   if (it != undefined) return it[ITERATOR]
     || it['@@iterator']
@@ -3219,7 +3145,7 @@ module.exports = __webpack_require__(2).getIteratorMethod = function (it) {
 
 
 /***/ }),
-/* 92 */
+/* 90 */
 /***/ (function(module, exports) {
 
 // fast apply, http://jsperf.lnkit.com/fast-apply/5
@@ -3241,15 +3167,15 @@ module.exports = function (fn, args, that) {
 
 
 /***/ }),
-/* 93 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(0);
-var macrotask = __webpack_require__(44).set;
+var macrotask = __webpack_require__(46).set;
 var Observer = global.MutationObserver || global.WebKitMutationObserver;
 var process = global.process;
 var Promise = global.Promise;
-var isNode = __webpack_require__(17)(process) == 'process';
+var isNode = __webpack_require__(18)(process) == 'process';
 
 module.exports = function () {
   var head, last, notify;
@@ -3316,7 +3242,7 @@ module.exports = function () {
 
 
 /***/ }),
-/* 94 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(0);
@@ -3326,10 +3252,10 @@ module.exports = navigator && navigator.userAgent || '';
 
 
 /***/ }),
-/* 95 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var hide = __webpack_require__(6);
+var hide = __webpack_require__(7);
 module.exports = function (target, src, safe) {
   for (var key in src) {
     if (safe && target[key]) target[key] = src[key];
@@ -3339,15 +3265,15 @@ module.exports = function (target, src, safe) {
 
 
 /***/ }),
-/* 96 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var global = __webpack_require__(0);
 var core = __webpack_require__(2);
-var dP = __webpack_require__(15);
-var DESCRIPTORS = __webpack_require__(10);
+var dP = __webpack_require__(16);
+var DESCRIPTORS = __webpack_require__(11);
 var SPECIES = __webpack_require__(1)('species');
 
 module.exports = function (KEY) {
@@ -3360,7 +3286,7 @@ module.exports = function (KEY) {
 
 
 /***/ }),
-/* 97 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var ITERATOR = __webpack_require__(1)('iterator');
@@ -3388,17 +3314,17 @@ module.exports = function (exec, skipClosing) {
 
 
 /***/ }),
-/* 98 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 // https://github.com/tc39/proposal-promise-finally
 
-var $export = __webpack_require__(8);
+var $export = __webpack_require__(9);
 var core = __webpack_require__(2);
 var global = __webpack_require__(0);
-var speciesConstructor = __webpack_require__(43);
-var promiseResolve = __webpack_require__(46);
+var speciesConstructor = __webpack_require__(45);
+var promiseResolve = __webpack_require__(48);
 
 $export($export.P + $export.R, 'Promise', { 'finally': function (onFinally) {
   var C = speciesConstructor(this, core.Promise || global.Promise);
@@ -3415,15 +3341,15 @@ $export($export.P + $export.R, 'Promise', { 'finally': function (onFinally) {
 
 
 /***/ }),
-/* 99 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // https://github.com/tc39/proposal-promise-try
-var $export = __webpack_require__(8);
-var newPromiseCapability = __webpack_require__(26);
-var perform = __webpack_require__(45);
+var $export = __webpack_require__(9);
+var newPromiseCapability = __webpack_require__(29);
+var perform = __webpack_require__(47);
 
 $export($export.S, 'Promise', { 'try': function (callbackfn) {
   var promiseCapability = newPromiseCapability.f(this);
@@ -3434,10 +3360,122 @@ $export($export.S, 'Promise', { 'try': function (callbackfn) {
 
 
 /***/ }),
-/* 100 */
-/***/ (function(module, exports) {
+/* 98 */
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = require("gravatar");
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _bcryptjs = __webpack_require__(30);
+
+var _bcryptjs2 = _interopRequireDefault(_bcryptjs);
+
+var _postsModel = __webpack_require__(49);
+
+var _postsModel2 = _interopRequireDefault(_postsModel);
+
+var _joi = __webpack_require__(13);
+
+var _joi2 = _interopRequireDefault(_joi);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  validatePosts: function validatePosts(body) {
+    var schema = _joi2.default.object().keys({
+      text: _joi2.default.string().min(5).max(300).required(),
+      firstName: _joi2.default.string(),
+      lastName: _joi2.default.string()
+    });
+
+    var _Joi$validate = _joi2.default.validate(body, schema),
+        value = _Joi$validate.value,
+        error = _Joi$validate.error;
+
+    if (error && error.details) {
+      return { error: error };
+    }
+    return { value: value };
+  }
+};
+
+/***/ }),
+/* 99 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _userRouter = __webpack_require__(100);
+
+Object.defineProperty(exports, 'userRouter', {
+  enumerable: true,
+  get: function get() {
+    return _userRouter.userRouter;
+  }
+});
+
+/***/ }),
+/* 100 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.userRouter = undefined;
+
+var _express = __webpack_require__(4);
+
+var _express2 = _interopRequireDefault(_express);
+
+var _userCtrl = __webpack_require__(101);
+
+var _userCtrl2 = _interopRequireDefault(_userCtrl);
+
+var _passport = __webpack_require__(8);
+
+var _passport2 = _interopRequireDefault(_passport);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var userRouter = exports.userRouter = _express2.default.Router();
+
+//route       : GET api/users/test
+//description : Test users route
+//access      : pubic
+userRouter.get('/test', function (req, res) {
+  return res.json({ message: "users works" });
+});
+
+//route       : POST api/users/register
+//description : Register user
+//access      : Public
+userRouter.post('/register', _userCtrl2.default.register);
+userRouter.get('/register', function (req, res) {
+  return res.json({ message: "register works" });
+});
+
+//route       : POST api/users/login
+//description : Login user
+//access      : Public
+userRouter.post('/login', _userCtrl2.default.login);
+
+//route       : GET api/users/current
+//description : Return current user
+//access      : Private
+
+userRouter.get('/current', _passport2.default.authenticate('jwt', { session: false }), _userCtrl2.default.authenticate);
 
 /***/ }),
 /* 101 */
@@ -3450,19 +3488,211 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _jsonwebtoken = __webpack_require__(102);
+var _regenerator = __webpack_require__(19);
 
-var _jsonwebtoken2 = _interopRequireDefault(_jsonwebtoken);
+var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _keys = __webpack_require__(29);
+var _asyncToGenerator2 = __webpack_require__(20);
 
-var _keys2 = _interopRequireDefault(_keys);
+var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
-var _userModel = __webpack_require__(7);
+var _userService = __webpack_require__(31);
+
+var _userService2 = _interopRequireDefault(_userService);
+
+var _userModel = __webpack_require__(5);
 
 var _userModel2 = _interopRequireDefault(_userModel);
 
-var _mongoose = __webpack_require__(5);
+var _bcryptjs = __webpack_require__(30);
+
+var _bcryptjs2 = _interopRequireDefault(_bcryptjs);
+
+var _gravatar = __webpack_require__(102);
+
+var _gravatar2 = _interopRequireDefault(_gravatar);
+
+var _jwt = __webpack_require__(103);
+
+var _jwt2 = _interopRequireDefault(_jwt);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  register: function () {
+    var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(req, res) {
+      var _userService$validate, _value, error, encryptedPass, avatar, user;
+
+      return _regenerator2.default.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.prev = 0;
+              _userService$validate = _userService2.default.validateRegister(req.body), _value = _userService$validate.value, error = _userService$validate.error;
+
+              if (!error) {
+                _context.next = 4;
+                break;
+              }
+
+              return _context.abrupt('return', res.status(400).json(error));
+
+            case 4:
+              encryptedPass = _userService2.default.encryptedPassword(_value.password);
+              //GRAVATAR
+
+              avatar = _gravatar2.default.url(req.body.email, {
+                s: '200', //size
+                r: 'r', //rating
+                d: 'mm' //default
+              });
+              _context.next = 8;
+              return _userModel2.default.create({
+                email: _value.email,
+                userName: _value.userName,
+                firstName: _value.firstName,
+                lastName: _value.lastName,
+                password: encryptedPass,
+                avatar: avatar,
+                date: _value.date
+              });
+
+            case 8:
+              user = _context.sent;
+              return _context.abrupt('return', res.json(user));
+
+            case 13:
+              _context.prev = 13;
+              _context.t0 = _context['catch'](0);
+
+              console.error(_context.t0);
+              return _context.abrupt('return', res.status(500).send(_context.t0));
+
+            case 17:
+              return _context.abrupt('return', res.json(value));
+
+            case 19:
+            case 'end':
+              return _context.stop();
+          }
+        }
+      }, _callee, this, [[0, 13]]);
+    }));
+
+    function register(_x, _x2) {
+      return _ref.apply(this, arguments);
+    }
+
+    return register;
+  }(),
+  login: function () {
+    var _ref2 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee2(req, res) {
+      var _userService$validate2, _value2, error, user, authenticated, token;
+
+      return _regenerator2.default.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              _context2.prev = 0;
+              _userService$validate2 = _userService2.default.validateLogin(req.body), _value2 = _userService$validate2.value, error = _userService$validate2.error;
+
+              if (!error) {
+                _context2.next = 4;
+                break;
+              }
+
+              return _context2.abrupt('return', res.status(400).json(error));
+
+            case 4:
+              _context2.next = 6;
+              return _userModel2.default.findOne({ email: _value2.email });
+
+            case 6:
+              user = _context2.sent;
+
+              if (user) {
+                _context2.next = 9;
+                break;
+              }
+
+              return _context2.abrupt('return', res.status(404).json({ err: "User not found" }));
+
+            case 9:
+              authenticated = _userService2.default.comparePassword(_value2.password, user.password);
+
+              if (authenticated) {
+                _context2.next = 12;
+                break;
+              }
+
+              return _context2.abrupt('return', res.status(401).json({ err: "Invalid password" }));
+
+            case 12:
+              token = _jwt2.default.issue({
+                id: user._id
+              }, '3h');
+              return _context2.abrupt('return', res.json(token));
+
+            case 16:
+              _context2.prev = 16;
+              _context2.t0 = _context2['catch'](0);
+
+              console.error(_context2.t0);
+              return _context2.abrupt('return', res.status(500).send(_context2.t0));
+
+            case 20:
+            case 'end':
+              return _context2.stop();
+          }
+        }
+      }, _callee2, this, [[0, 16]]);
+    }));
+
+    function login(_x3, _x4) {
+      return _ref2.apply(this, arguments);
+    }
+
+    return login;
+  }(),
+  authenticate: function authenticate(req, res) {
+    return res.json({
+      id: req.user.id,
+      userName: req.user.userName,
+      email: req.user.email
+    });
+  }
+};
+
+/***/ }),
+/* 102 */
+/***/ (function(module, exports) {
+
+module.exports = require("gravatar");
+
+/***/ }),
+/* 103 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _jsonwebtoken = __webpack_require__(104);
+
+var _jsonwebtoken2 = _interopRequireDefault(_jsonwebtoken);
+
+var _keys = __webpack_require__(33);
+
+var _keys2 = _interopRequireDefault(_keys);
+
+var _userModel = __webpack_require__(5);
+
+var _userModel2 = _interopRequireDefault(_userModel);
+
+var _mongoose = __webpack_require__(6);
 
 var _mongoose2 = _interopRequireDefault(_mongoose);
 
@@ -3479,13 +3709,13 @@ exports.default = {
 };
 
 /***/ }),
-/* 102 */
+/* 104 */
 /***/ (function(module, exports) {
 
 module.exports = require("jsonwebtoken");
 
 /***/ }),
-/* 103 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3495,7 +3725,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _profileRouter = __webpack_require__(104);
+var _profileRouter = __webpack_require__(106);
 
 Object.defineProperty(exports, 'profileRouter', {
   enumerable: true,
@@ -3505,7 +3735,7 @@ Object.defineProperty(exports, 'profileRouter', {
 });
 
 /***/ }),
-/* 104 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3520,21 +3750,31 @@ var _express = __webpack_require__(4);
 
 var _express2 = _interopRequireDefault(_express);
 
-var _profileCtrl = __webpack_require__(105);
+var _profileCtrl = __webpack_require__(107);
 
 var _profileCtrl2 = _interopRequireDefault(_profileCtrl);
 
-var _passport = __webpack_require__(12);
+var _passport = __webpack_require__(8);
 
 var _passport2 = _interopRequireDefault(_passport);
 
-var _isUser = __webpack_require__(113);
+var _isUser = __webpack_require__(50);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var profileRouter = exports.profileRouter = _express2.default.Router();
 
 var userLogged = [_passport2.default.authenticate('jwt', { session: false }), _isUser.isUser];
+
+//route       : POST api/profiles/experience
+//description : Add experience to profile
+//access      : Private
+profileRouter.post('/addJob', userLogged, _profileCtrl2.default.addJob);
+
+//route       : POST api/profiles/experience
+//description : Add experience to profile
+//access      : Private
+profileRouter.post('/addEducation', userLogged, _profileCtrl2.default.addEduc);
 
 //route       : GET api/profiles/test
 //description : Test profile route
@@ -3571,7 +3811,7 @@ profileRouter.route('/')
 .get(userLogged, _profileCtrl2.default.findOne);
 
 /***/ }),
-/* 105 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3581,72 +3821,40 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _regenerator = __webpack_require__(30);
+var _regenerator = __webpack_require__(19);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _assign = __webpack_require__(106);
+var _assign = __webpack_require__(108);
 
 var _assign2 = _interopRequireDefault(_assign);
 
-var _asyncToGenerator2 = __webpack_require__(31);
+var _asyncToGenerator2 = __webpack_require__(20);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
-var _profileModel = __webpack_require__(49);
+var _profileModel = __webpack_require__(51);
 
 var _profileModel2 = _interopRequireDefault(_profileModel);
 
-var _profileService = __webpack_require__(112);
+var _profileService = __webpack_require__(114);
 
 var _profileService2 = _interopRequireDefault(_profileService);
 
-var _userService = __webpack_require__(47);
+var _userService = __webpack_require__(31);
 
 var _userService2 = _interopRequireDefault(_userService);
 
-var _joi = __webpack_require__(27);
+var _joi = __webpack_require__(13);
 
 var _joi2 = _interopRequireDefault(_joi);
 
-var _userModel = __webpack_require__(7);
+var _userModel = __webpack_require__(5);
 
 var _userModel2 = _interopRequireDefault(_userModel);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// export default {
-//   async findOne(req, res) {
-//     try {
-//
-//       // const {id} = req.params
-//       console.log({user: req.user.id})
-//       const profile = await Profile.findOne({user: req.user.id}).populate('user', ['firstName', 'lastName', 'avatar'])
-//       if (!profile) {
-//         return res.status(404).json({err: 'Profil not found'})
-//       }
-//       return res.json(profile)
-//   } catch (err) {
-//     console.log(err)
-//     return res.status(500).send(err)
-//   }
-// },
-//
-//   async create(req, res){
-//     try {
-//       const { value, error } = profileService.validateProfile(req.body);
-//       if (error && error.details) {
-//         return res.json(error)
-//       }
-//       const profile = await Profile.create(Object.assign({}, value, {user: req.user._id}))
-//       return res.json(profile);
-//     } catch (err) {
-//         console.error(err)
-//         return res.status(500).send(err);
-//     }
-//   },
-//
-// }
 exports.default = {
   createAndUpdate: function () {
     var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(req, res) {
@@ -3713,122 +3921,168 @@ exports.default = {
 
     return createAndUpdate;
   }(),
-  findAll: function () {
+  addJob: function () {
     var _ref2 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee2(req, res) {
-      var profiles;
+      var profile, newExp;
       return _regenerator2.default.wrap(function _callee2$(_context2) {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
               _context2.prev = 0;
               _context2.next = 3;
-              return _profileModel2.default.find().populate('user', ['firstName', 'lastName', 'avatar']);
+              return _profileModel2.default.findOne({ user: req.user._id });
 
             case 3:
-              profiles = _context2.sent;
+              profile = _context2.sent;
 
-              if (profiles) {
+              if (profile) {
                 _context2.next = 6;
                 break;
               }
 
-              return _context2.abrupt('return', res.status(404).json({ err: 'There are no profils' }));
+              return _context2.abrupt('return', res.status(404).json({ err: 'there is no profil for this user' }));
 
             case 6:
-              return _context2.abrupt('return', res.json(profiles));
+              newExp = {
+                title: req.body.title,
+                company: req.body.company,
+                location: req.body.location,
+                from: req.body.from,
+                to: req.body.to,
+                current: req.body.current,
+                description: req.body.description
+                //add to experiecne array
+              };
+              profile.experience.unshift(newExp);
+              profile.save().then(function (profile) {
+                return res.json(profile);
+              });
+              _context2.next = 15;
+              break;
 
-            case 9:
-              _context2.prev = 9;
+            case 11:
+              _context2.prev = 11;
               _context2.t0 = _context2['catch'](0);
 
               console.log(_context2.t0);
               return _context2.abrupt('return', res.status(500).send(_context2.t0));
 
-            case 13:
+            case 15:
             case 'end':
               return _context2.stop();
           }
         }
-      }, _callee2, this, [[0, 9]]);
+      }, _callee2, this, [[0, 11]]);
     }));
 
-    function findAll(_x3, _x4) {
+    function addJob(_x3, _x4) {
       return _ref2.apply(this, arguments);
     }
 
-    return findAll;
+    return addJob;
   }(),
-  findOne: function () {
+  addEduc: function () {
     var _ref3 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee3(req, res) {
-      var profile;
+      var profile, newEdu;
       return _regenerator2.default.wrap(function _callee3$(_context3) {
         while (1) {
           switch (_context3.prev = _context3.next) {
             case 0:
               _context3.prev = 0;
+              _context3.next = 3;
+              return _profileModel2.default.findOne({ user: req.user._id });
 
-              // const {id} = req.params
-              console.log({ user: req.user.id });
-              _context3.next = 4;
-              return _profileModel2.default.findOne({ user: req.user.id }).populate('user', ['firstName', 'lastName', 'avatar']);
-
-            case 4:
+            case 3:
               profile = _context3.sent;
 
               if (profile) {
-                _context3.next = 7;
+                _context3.next = 6;
                 break;
               }
 
-              return _context3.abrupt('return', res.status(404).json({ err: 'Profil not found' }));
+              return _context3.abrupt('return', res.status(404).json({ err: 'there is no profil for this user' }));
 
-            case 7:
-              return _context3.abrupt('return', res.json(profile));
+            case 6:
+              newEdu = {
+                school: req.body.school,
+                degree: req.body.degree,
+                fieldOfStudy: req.body.fieldOfStudy,
+                from: req.body.from,
+                to: req.body.to,
+                current: req.body.current,
+                description: req.body.description
+                //add to experiecne array
+              };
+              profile.education.unshift(newEdu);
+              profile.save().then(function (profile) {
+                return res.json(profile);
+              });
+              _context3.next = 15;
+              break;
 
-            case 10:
-              _context3.prev = 10;
+            case 11:
+              _context3.prev = 11;
               _context3.t0 = _context3['catch'](0);
 
               console.log(_context3.t0);
               return _context3.abrupt('return', res.status(500).send(_context3.t0));
 
-            case 14:
+            case 15:
             case 'end':
               return _context3.stop();
           }
         }
-      }, _callee3, this, [[0, 10]]);
+      }, _callee3, this, [[0, 11]]);
     }));
 
-    function findOne(_x5, _x6) {
+    function addEduc(_x5, _x6) {
       return _ref3.apply(this, arguments);
     }
 
-    return findOne;
+    return addEduc;
   }(),
-  findOneByHandle: function () {
+
+
+  //
+  //  Profile.findOne({user: req.user.id})
+  //     .then(profile => {
+  //       const newJob = {
+  //       title: req.body.title,
+  //       company: req.body.from,
+  //       location: req.body.location,
+  //       to: req.body.to,
+  //       current: req.body.current,
+  //       description: req.body.description,
+  //     }
+  //
+  //     profile.experience.unshift(newJob)
+  //     profile.save().then(profile => res.json(profile))
+  // })
+  // },
+
+  findAll: function () {
     var _ref4 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee4(req, res) {
-      var profile;
+      var profiles;
       return _regenerator2.default.wrap(function _callee4$(_context4) {
         while (1) {
           switch (_context4.prev = _context4.next) {
             case 0:
               _context4.prev = 0;
               _context4.next = 3;
-              return _profileModel2.default.findOne({ handle: req.params.handle }).populate('user', ['firstName', 'lastName', 'avatar']);
+              return _profileModel2.default.find().populate('user', ['firstName', 'lastName', 'avatar']);
 
             case 3:
-              profile = _context4.sent;
+              profiles = _context4.sent;
 
-              if (profile) {
+              if (profiles) {
                 _context4.next = 6;
                 break;
               }
 
-              return _context4.abrupt('return', res.status(404).json({ err: 'there is no profil for this user' }));
+              return _context4.abrupt('return', res.status(404).json({ err: 'There are no profils' }));
 
             case 6:
-              return _context4.abrupt('return', res.json(profile));
+              return _context4.abrupt('return', res.json(profiles));
 
             case 9:
               _context4.prev = 9;
@@ -3845,13 +4099,13 @@ exports.default = {
       }, _callee4, this, [[0, 9]]);
     }));
 
-    function findOneByHandle(_x7, _x8) {
+    function findAll(_x7, _x8) {
       return _ref4.apply(this, arguments);
     }
 
-    return findOneByHandle;
+    return findAll;
   }(),
-  findOneById: function () {
+  findOne: function () {
     var _ref5 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee5(req, res) {
       var profile;
       return _regenerator2.default.wrap(function _callee5$(_context5) {
@@ -3859,39 +4113,132 @@ exports.default = {
           switch (_context5.prev = _context5.next) {
             case 0:
               _context5.prev = 0;
-              _context5.next = 3;
-              return _profileModel2.default.findOne({ user: req.params.user_id }).populate('user', ['firstName', 'lastName', 'avatar']);
 
-            case 3:
+              // const {id} = req.params
+              console.log({ user: req.user.id });
+              _context5.next = 4;
+              return _profileModel2.default.findOne({ user: req.user.id }).populate('user', ['firstName', 'lastName', 'avatar']);
+
+            case 4:
               profile = _context5.sent;
 
               if (profile) {
-                _context5.next = 6;
+                _context5.next = 7;
                 break;
               }
 
-              return _context5.abrupt('return', res.status(404).json({ err: 'there is no profil for this user' }));
+              return _context5.abrupt('return', res.status(404).json({ err: 'Profil not found' }));
 
-            case 6:
+            case 7:
               return _context5.abrupt('return', res.json(profile));
 
-            case 9:
-              _context5.prev = 9;
+            case 10:
+              _context5.prev = 10;
               _context5.t0 = _context5['catch'](0);
 
               console.log(_context5.t0);
               return _context5.abrupt('return', res.status(500).send(_context5.t0));
 
-            case 13:
+            case 14:
             case 'end':
               return _context5.stop();
           }
         }
-      }, _callee5, this, [[0, 9]]);
+      }, _callee5, this, [[0, 10]]);
     }));
 
-    function findOneById(_x9, _x10) {
+    function findOne(_x9, _x10) {
       return _ref5.apply(this, arguments);
+    }
+
+    return findOne;
+  }(),
+  findOneByHandle: function () {
+    var _ref6 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee6(req, res) {
+      var profile;
+      return _regenerator2.default.wrap(function _callee6$(_context6) {
+        while (1) {
+          switch (_context6.prev = _context6.next) {
+            case 0:
+              _context6.prev = 0;
+              _context6.next = 3;
+              return _profileModel2.default.findOne({ handle: req.params.handle }).populate('user', ['firstName', 'lastName', 'avatar']);
+
+            case 3:
+              profile = _context6.sent;
+
+              if (profile) {
+                _context6.next = 6;
+                break;
+              }
+
+              return _context6.abrupt('return', res.status(404).json({ err: 'there is no profil for this user' }));
+
+            case 6:
+              return _context6.abrupt('return', res.json(profile));
+
+            case 9:
+              _context6.prev = 9;
+              _context6.t0 = _context6['catch'](0);
+
+              console.log(_context6.t0);
+              return _context6.abrupt('return', res.status(500).send(_context6.t0));
+
+            case 13:
+            case 'end':
+              return _context6.stop();
+          }
+        }
+      }, _callee6, this, [[0, 9]]);
+    }));
+
+    function findOneByHandle(_x11, _x12) {
+      return _ref6.apply(this, arguments);
+    }
+
+    return findOneByHandle;
+  }(),
+  findOneById: function () {
+    var _ref7 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee7(req, res) {
+      var profile;
+      return _regenerator2.default.wrap(function _callee7$(_context7) {
+        while (1) {
+          switch (_context7.prev = _context7.next) {
+            case 0:
+              _context7.prev = 0;
+              _context7.next = 3;
+              return _profileModel2.default.findOne({ user: req.params.user_id }).populate('user', ['firstName', 'lastName', 'avatar']);
+
+            case 3:
+              profile = _context7.sent;
+
+              if (profile) {
+                _context7.next = 6;
+                break;
+              }
+
+              return _context7.abrupt('return', res.status(404).json({ err: 'there is no profil for this user' }));
+
+            case 6:
+              return _context7.abrupt('return', res.json(profile));
+
+            case 9:
+              _context7.prev = 9;
+              _context7.t0 = _context7['catch'](0);
+
+              console.log(_context7.t0);
+              return _context7.abrupt('return', res.status(500).send(_context7.t0));
+
+            case 13:
+            case 'end':
+              return _context7.stop();
+          }
+        }
+      }, _callee7, this, [[0, 9]]);
+    }));
+
+    function findOneById(_x13, _x14) {
+      return _ref7.apply(this, arguments);
     }
 
     return findOneById;
@@ -3899,45 +4246,45 @@ exports.default = {
 };
 
 /***/ }),
-/* 106 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = { "default": __webpack_require__(107), __esModule: true };
-
-/***/ }),
-/* 107 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(108);
-module.exports = __webpack_require__(2).Object.assign;
-
-
-/***/ }),
 /* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// 19.1.3.1 Object.assign(target, source)
-var $export = __webpack_require__(8);
-
-$export($export.S + $export.F, 'Object', { assign: __webpack_require__(109) });
-
+module.exports = { "default": __webpack_require__(109), __esModule: true };
 
 /***/ }),
 /* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
+__webpack_require__(110);
+module.exports = __webpack_require__(2).Object.assign;
+
+
+/***/ }),
+/* 110 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 19.1.3.1 Object.assign(target, source)
+var $export = __webpack_require__(9);
+
+$export($export.S + $export.F, 'Object', { assign: __webpack_require__(111) });
+
+
+/***/ }),
+/* 111 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 
 // 19.1.2.1 Object.assign(target, source, ...)
-var getKeys = __webpack_require__(34);
-var gOPS = __webpack_require__(110);
-var pIE = __webpack_require__(111);
-var toObject = __webpack_require__(41);
-var IObject = __webpack_require__(35);
+var getKeys = __webpack_require__(36);
+var gOPS = __webpack_require__(112);
+var pIE = __webpack_require__(113);
+var toObject = __webpack_require__(43);
+var IObject = __webpack_require__(37);
 var $assign = Object.assign;
 
 // should work with symbols and should have deterministic property order (V8 bug)
-module.exports = !$assign || __webpack_require__(21)(function () {
+module.exports = !$assign || __webpack_require__(24)(function () {
   var A = {};
   var B = {};
   // eslint-disable-next-line no-undef
@@ -3964,21 +4311,21 @@ module.exports = !$assign || __webpack_require__(21)(function () {
 
 
 /***/ }),
-/* 110 */
+/* 112 */
 /***/ (function(module, exports) {
 
 exports.f = Object.getOwnPropertySymbols;
 
 
 /***/ }),
-/* 111 */
+/* 113 */
 /***/ (function(module, exports) {
 
 exports.f = {}.propertyIsEnumerable;
 
 
 /***/ }),
-/* 112 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3988,11 +4335,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _profileModel = __webpack_require__(49);
+var _profileModel = __webpack_require__(51);
 
 var _profileModel2 = _interopRequireDefault(_profileModel);
 
-var _joi = __webpack_require__(27);
+var _joi = __webpack_require__(13);
 
 var _joi2 = _interopRequireDefault(_joi);
 
@@ -4046,23 +4393,6 @@ exports.default = {
     }
     return { value: value };
   }
-};
-
-/***/ }),
-/* 113 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var isUser = exports.isUser = function isUser(req, res, next) {
-  if (!req.user) {
-    return res.json({ err: 'unauthorized, not a user' });
-  }
-  next();
 };
 
 /***/ })

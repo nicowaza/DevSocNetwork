@@ -3,7 +3,6 @@ import keys from '../../config/keys'
 import User from '../ressources/users/user-model'
 import mongoose from 'mongoose'
 
-// const payload = { id: user.id, firstName: user.firstName, lastName: user.lastName, avatar: user.avatar } // create JWT payload
 
 export default {
 
